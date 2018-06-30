@@ -1,0 +1,70 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildscript {
+        repositories {
+            jcenter()
+        }
+        dependencies {
+            classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+            classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        }
+    }
+
+    apply plugin: 'com.android.library'
+    apply plugin: 'com.github.dcendents.android-maven'
+    apply plugin: 'com.jfrog.bintray'
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'persianviews'
+
+    publishedGroupId = 'ir.meandme.persianviews'
+    libraryName = 'PersianViews'
+    artifact = 'persianviews'
+
+    libraryDescription = 'A library contains some persian views'
+
+    siteUrl = 'https://github.com/LissF/DiagonalScrollView'
+    gitUrl = 'https://github.com/LissF/DiagonalScrollView.git'
+
+    libraryVersion = '0.3.3'
+
+    developerId = 'lissf'
+    developerName = 'Yegor Zatsepin'
+    developerEmail = 'Liss_F@ukr.net'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
