@@ -9,8 +9,22 @@ import android.graphics.Typeface;
 
 public class ConfigAndURLs {
 
-    public static Typeface getFont(Context context){
+    public static Typeface getFontRegular(Context context){
         return Typeface.createFromAsset(context.getAssets(), "fonts/Shabnam-FD.ttf");
     }
+
+    public static Typeface getFontLight(Context context){
+        return Typeface.createFromAsset(context.getAssets(), "fonts/Shabnam-Light-FD.ttf");
+    }
+
+
+    public static Typeface getFontBold(Context context){
+        return Typeface.createFromAsset(context.getAssets(), "fonts/Shabnam-Bold-FD.ttf");
+    }
+
+
+
+
+
 
 }

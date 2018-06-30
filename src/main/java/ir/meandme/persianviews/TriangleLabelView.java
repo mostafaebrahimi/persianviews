@@ -46,7 +46,7 @@ public class TriangleLabelView extends View {
             paint.setColor(color);
             paint.setTextAlign(Paint.Align.CENTER);
             paint.setTextSize(size);
-            Typeface plain = ConfigAndURLs.getFont(context) ;
+            Typeface plain = ConfigAndURLs.getFontRegular(context) ;
             paint.setTypeface(plain);
 //            if (style == 1) {
 //                paint.setTypeface(plain);

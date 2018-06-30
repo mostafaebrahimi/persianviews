@@ -2,14 +2,15 @@ package ir.meandme.persianviews;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
-import android.widget.EditText;
+
 
 /**
  * Created by Mostafa on 12/28/2017.
  */
 
-public class CustomFontEditText extends EditText {
+public class CustomFontEditText extends AppCompatEditText {
 
 
     private Context context;
@@ -38,19 +39,19 @@ public class CustomFontEditText extends EditText {
     }
 
     private void init() {
-        Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/IRANSansMobile.ttf");
+        Typeface tf = ConfigAndURLs.getFontRegular(context);
         this.setTypeface(tf);
     }
 
     @Override
     public void setTypeface(Typeface tf, int style) {
-        tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/IRANSansMobile.ttf");
+        tf = ConfigAndURLs.getFontRegular(context);
         super.setTypeface(tf, style);
     }
 
     @Override
     public void setTypeface(Typeface tf) {
-        tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/IRANSansMobile.ttf");
+        tf = ConfigAndURLs.getFontRegular(context);
         super.setTypeface(tf);
     }
 }

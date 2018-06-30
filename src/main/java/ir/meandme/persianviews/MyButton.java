@@ -1,16 +1,16 @@
 package ir.meandme.persianviews;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Typeface;
-import android.os.Build;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
-import android.widget.Button;
+
+
 
 /**
  * Created by Mostafa on 11/26/2016.
  */
-public class MyButton extends Button {
+public class MyButton extends AppCompatButton {
 
     public MyButton(Context context) {
         super(context);
@@ -27,16 +27,10 @@ public class MyButton extends Button {
         init();
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public MyButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init();
-    }
-
 
     private void init() {
         if (!isInEditMode()) {
-            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/IRANSansMobile.ttf");
+            Typeface tf = ConfigAndURLs.getFontRegular(getContext());
             setTypeface(tf);
         }
     }

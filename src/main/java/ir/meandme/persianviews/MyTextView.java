@@ -2,6 +2,7 @@ package ir.meandme.persianviews;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
@@ -9,7 +10,7 @@ import android.widget.TextView;
 /**
  * Created by Mostafa
  */
-public class MyTextView extends TextView {
+public class MyTextView extends AppCompatTextView {
 
     public MyTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -28,7 +29,7 @@ public class MyTextView extends TextView {
 
     private void init() {
         if (!isInEditMode()) {
-            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/IRANSansMobile.ttf");
+            Typeface tf = ConfigAndURLs.getFontRegular(getContext());
             setTypeface(tf);
         }
     }

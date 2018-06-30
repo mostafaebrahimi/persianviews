@@ -4,13 +4,14 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Build;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.widget.Button;
 
 /**
  * Created by Mostafa on 11/26/2016.
  */
-public class MyButtonBold extends Button {
+public class MyButtonBold extends AppCompatButton {
 
     public MyButtonBold(Context context) {
         super(context);
@@ -27,16 +28,10 @@ public class MyButtonBold extends Button {
         init();
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public MyButtonBold(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init();
-    }
-
 
     private void init() {
         if (!isInEditMode()) {
-            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/IRANSansMobile_Bold.ttf");
+            Typeface tf = ConfigAndURLs.getFontBold(getContext());
             setTypeface(tf);
         }
     }
